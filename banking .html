@@ -1,0 +1,147 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class BankAccount {
+private:
+    string accountHolder;
+    int accountNumber;
+    double balance;
+
+public:
+    // Constructor
+    BankAccount(string holder, int accNum, double initialBalance) {
+        accountHolder = holder;
+        accountNumber = accNum;
+        balance = initialBalance;
+    }
+
+    // Deposit function
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            cout << "Deposit successful! New balance: " << balance << endl;
+        } else {
+            cout << "Invalid deposit amount!" << endl;
+        }
+    }
+
+    // Withdraw function
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            cout << "Withdrawal successful! New balance: " << balance << endl;
+        } else {
+            cout << "Invalid withdrawal amount or insufficient funds!" << endl;
+        }
+    }
+
+    // Display account details
+    void displayAccount() {
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    // Create a bank account
+    BankAccount myAccount("John Doe", 123456, 1000.0);
+
+    myAccount.displayAccount();
+
+    myAccount.deposit(500);
+    myAccount.withdraw(200);
+    myAccount.withdraw(1500); // Attempt to withdraw more than balance
+    
+    myAccount.displayAccount();
+
+    return 0;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bank Account</h1>
+        <p><strong>Account Holder:</strong> <span id="accountHolder">John Doe</span></p>
+        <p><strong>Balance:</strong> $<span id="balance">1000</span></p>
+
+        <input type="number" id="amount" placeholder="Enter amount">
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="withdraw()">Withdraw</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+let balance = 1000;
+
+function deposit() {
+    let amount = parseFloat(document.getElementById("amount").value);
+    if (amount > 0) {
+        balance += amount;
+        document.getElementById("balance").innerText = balance;
+        alert("Deposit Successful!");
+    } else {
+        alert("Invalid Amount!");
+    }
+}
+
+function withdraw() {
+    let amount = parseFloat(document.getElementById("amount").value);
+    if (amount > 0 && amount <= balance) {
+        balance -= amount;
+        document.getElementById("balance").innerText = balance;
+        alert("Withdrawal Successful!");
+    } else {
+        alert("Invalid Amount or Insufficient Balance!");
+    }
+}
+
+
+element sa 
+operator mono 
+buy </predefined inputs> 
+$0.00000001
+
+building {done}
+!g6 
